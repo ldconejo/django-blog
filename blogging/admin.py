@@ -4,20 +4,14 @@ from blogging.models import Post, Category
 
 class CategoryInPostInline(admin.TabularInline):
     model = Category.posts.through
-    extra = 2
 
 
+@admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     inlines = [
         CategoryInPostInline,
     ]
 
-
+@admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    inlines = [
-        CategoryInPostInline,
-    ]
     exclude = ('posts',)
-
-admin.site.register(Post, PostAdmin)
-admin.site.register(Category, CategoryAdmin)
