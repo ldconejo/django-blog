@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>{{ poll.title }}</h1>
+<h1>{{ object.title }}</h1>
 <div class="poll-body">
-    {{ poll.text }}
+    {{ object.text }}
 </div>
 <div class="poll-score">
-    Current score: {{ poll.score }}
+    Current score: {{ object.score }}
 </div>
 <div class="poll-vote">
     <form method="POST">

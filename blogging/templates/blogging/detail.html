@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 <a class="backlink" href="/">Home</a>
-<h1>{{ post }}</h1>
+<h1>{{ object }}</h1>
 <p class="byline">
-    Posted by: {{ post.author.username }} &mdash; {{ post.published_date }}
+    Posted by: {{ object.author.username }} &mdash; {{ object.published_date }}
 </p>
 <div class="post-body">
-    {{ post.text }}
+    {{ object.text }}
 </div>
 <ul class="categories">
-    {% for category in post.categories.all %}
+    {% for category in object.categories.all %}
     <li> {{ category }}</li>
     {% endfor %}
 </ul>
