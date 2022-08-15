@@ -60,11 +60,8 @@ class FrontEndTestCase(TestCase):
     def test_details_only_published(self):
         for count in range(1, 11):
             title = "Post %d Title" % count
-            print(title)
             post = Post.objects.get(title=title)
-            print(post.pk)
             resp = self.client.get('/posts/%d/' % post.pk)
-            print(resp)
             if count < 6:
                 self.assertEqual(resp.status_code, 200)
                 self.assertContains(resp, title)
