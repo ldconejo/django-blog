@@ -3,8 +3,8 @@ python:
   - "3.10-dev"
 install:
   - pip install -r requirements.txt
-  - python manage.py makemigration blogging
-  - python manage.py makemigration polling
+  - python manage.py makemigrations blogging
+  - python manage.py makemigrations polling
   - python manage.py migrate --run-syncdb 
 script:
   - python manage.py test
