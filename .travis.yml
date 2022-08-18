@@ -3,7 +3,8 @@ python:
   - "3.10-dev"
 install:
   - pip install -r requirements.txt
-  - echo "from django.contrib.auth.models import User; User.objects.create_superuser('travis', 'admin@example.com', 'password')" | python manage.py shell
   - python manage.py migrate
+  - echo "from django.contrib.auth.models import User; User.objects.create_superuser('travis', 'admin@example.com', 'password')" | python manage.py shell
+
 script:
   - python manage.py test
