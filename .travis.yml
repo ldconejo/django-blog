@@ -5,6 +5,6 @@ install:
   - pip install -r requirements.txt
   - python manage.py makemigrations blogging
   - python manage.py makemigrations polling
-  - python manage.py migrate --run-syncdb 
+  - python manage.py migrate
 script:
   - python manage.py test
