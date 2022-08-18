@@ -3,6 +3,8 @@ python:
   - "3.6"
 install:
   - pip install -r requirements.txt
+  - python manage.py makemigration blogging
+  - python manage.py makemigration polling
   - python manage.py migrate --run-syncdb 
 script:
   - python manage.py test
